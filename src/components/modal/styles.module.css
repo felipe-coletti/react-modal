@@ -1,0 +1,79 @@
+.modalContainer {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    min-height: 100%;
+    padding: 2.5rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.backdrop {
+    background-color: var(--backdrop-color);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.contentArea {
+    background-color: var(--primary-background-color);
+    border: none;
+    border-radius: 0.5rem;
+    max-width: 30rem;
+    padding: 1.5rem;
+    width: 100%;
+    position: relative;
+}
+
+.topArea {
+    display: flex;
+    justify-content: right;
+}
+
+.button {
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    color: var(--primary-text-color);
+    cursor: pointer;
+    display: flex;
+    font-size: 1.25rem;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.button:hover {
+    background-color: var(--secondary-background-color);
+}
+
+@media screen and (max-width: 480px) {
+    .backdrop {
+        display: none;
+    }
+
+    .container {
+        justify-content: unset;
+        padding: 0;
+    }
+
+    .contentArea {
+        border-radius: 0;
+        box-shadow: none;
+        max-width: unset;
+    }
+}

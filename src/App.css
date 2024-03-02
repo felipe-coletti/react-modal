@@ -1,0 +1,35 @@
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+.button {
+    background-color: var(--highlight-color);
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--primary-background-color);
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: bold;
+    padding: 0.75rem;
+}
+
+.content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.title {
+    color: var(--primary-text-color);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.paragraph {
+    color: var(--secondary-text-color);
+    font-size: 0.875rem;
+}
