@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import styles from './styles.module.css'
 import { Icon } from '@iconify/react'
 
-const Modal = ({ onClose, children }) => {
+const Modal = ({ isOpen, onClose, children }) => {
     useEffect(() => {
         const handleEsc = (event) => {
             if (event.key === 'Escape') {
@@ -16,6 +16,8 @@ const Modal = ({ onClose, children }) => {
             window.removeEventListener('keydown', handleEsc)
         }
     }, [onClose])
+
+    if (!isOpen) return null
 
     return (
         <div className={styles.modalContainer}>

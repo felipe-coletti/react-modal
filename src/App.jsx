@@ -3,20 +3,20 @@ import './App.css'
 import Modal from './components/modal'
 
 function App() {
-    const [isOpen, setIsOpen] = useState(false)
+    const [open, setOpen] = useState(false)
 
-    const openModal = () => setIsOpen(true)
-    const closeModal = () => setIsOpen(false)
+    const openModal = () => setOpen(true)
+    const closeModal = () => setOpen(false)
 
     return(
         <div className='container'>
             <button className='button' onClick={openModal}>Abrir modal</button>
-            {isOpen && <Modal onClose={closeModal}>
+            <Modal isOpen={open} onClose={closeModal}>
                 <div className='content-area'>
                     <h1 className='title'>Título</h1>
                     <p className='paragraph'>Texto</p>
                 </div>
-            </Modal>}
+            </Modal>
         </div>
     )
 }
