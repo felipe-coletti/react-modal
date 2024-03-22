@@ -4,18 +4,20 @@ import { Icon } from '@iconify/react'
 
 const Modal = ({ isOpen, onClose, children }) => {
     useEffect(() => {
-        const handleEsc = (event) => {
-            if (event.key === 'Escape') {
-                onClose()
+        if (isOpen) {
+            const handleEsc = (event) => {
+                if (event.key === 'Escape') {
+                    onClose()
+                }
+            }
+
+            window.addEventListener('keydown', handleEsc)
+        
+            return () => {
+                window.removeEventListener('keydown', handleEsc)
             }
         }
-
-        window.addEventListener('keydown', handleEsc)
-    
-        return () => {
-            window.removeEventListener('keydown', handleEsc)
-        }
-    }, [onClose])
+    }, [isOpen, onClose])
 
     if (!isOpen) return null
 
